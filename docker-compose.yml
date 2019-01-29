@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cra-regen:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cra-regen
+    container_name: cra-regen
+    volumes:
+      - ./:/usr/src/web
+    ports:
+      - '8086:8086'

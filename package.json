@@ -1,0 +1,61 @@
+{
+  "name": "reactjs-to-reasonreact",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-scripts": "2.1.3",
+    "reason-react": "^0.5.3"
+  },
+  "scripts": {
+    "start": "yarn watch:css & react-scripts start",
+    "start:full": "yarn watch:css & react-scripts start",
+    "build": "yarn build:css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "tsc -p tsconfig.json",
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "build:css": "postcss src/styles/index.css -o src/tailwind.css",
+    "watch:css": "postcss src/styles/index.css -o src/tailwind.css -w",
+    "build:bsb": "export BS_CMT_POST_PROCESS_CMD=\"gentype\" && bsb -make-world -clean-world",
+    "watch-bsb": "export BS_CMT_POST_PROCESS_CMD=\"gentype\" && bsb -make-world -clean-world -w",
+    "clean:bsb": "bsb -clean-world"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@types/jest": "23.3.13",
+    "@types/node": "10.12.19",
+    "@types/react": "16.7.22",
+    "@types/react-dom": "16.0.11",
+    "bs-platform": "4.0.18",
+    "gentype": "2.6.0",
+    "husky": "1.3.1",
+    "lint-staged": "8.1.1",
+    "postcss-cli": "6.1.1",
+    "prettier": "1.16.1",
+    "source-map-explorer": "1.6.0",
+    "tailwindcss": "0.7.4",
+    "typescript": "3.2.4"
+  },
+  "lint-staged": {
+    "*.{js,json,md,css,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn build:bsb && yarn lint"
+    }
+  }
+}

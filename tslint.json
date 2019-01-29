@@ -1,0 +1,24 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "jsx-no-lambda": {
+      "severity": "off"
+    },
+    "no-empty-interface": false,
+    "interface-name": false,
+    "no-console": { "severity": "off" },
+    "no-debugger": { "severity": "warn" },
+    "object-literal-sort-keys": false,
+    "object-literal-shorthand": false,
+    "no-shadowed-variable": false,
+    "only-arrow-functions": false,
+    "ordered-imports": false,
+    "class-name": { "severity": "warn" }
+  },
+  "jsRules": {
+    "object-literal-sort-keys": false
+  },
+  "linterOptions": {
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts", "src/**/*.bs.js"]
+  }
+}
