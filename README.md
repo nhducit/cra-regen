@@ -20,4 +20,4 @@ Other setup:
 
 ## Docker usage
 
-- run `docker-compose up`
+- run `docker-compose up` (Currently doesn't work due to some issues with bucklescript and linux OS)
