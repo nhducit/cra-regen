@@ -10,16 +10,16 @@
   },
   "scripts": {
     "start": "yarn watch:css & react-scripts start",
-    "start:full": "yarn watch:css & react-scripts start",
+    "start:full": "yarn watch:css & yar build:bsb & react-scripts start",
     "build": "yarn build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
     "analyze": "source-map-explorer build/static/js/main.*",
     "build:css": "postcss src/styles/index.css -o src/tailwind.css",
     "watch:css": "postcss src/styles/index.css -o src/tailwind.css -w",
     "build:bsb": "export BS_CMT_POST_PROCESS_CMD=\"gentype\" && bsb -make-world -clean-world",
-    "watch-bsb": "export BS_CMT_POST_PROCESS_CMD=\"gentype\" && bsb -make-world -clean-world -w",
+    "watch:bsb": "export BS_CMT_POST_PROCESS_CMD=\"gentype\" && bsb -make-world -clean-world -w",
     "clean:bsb": "bsb -clean-world"
   },
   "eslintConfig": {

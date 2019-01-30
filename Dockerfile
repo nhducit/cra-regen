@@ -1,4 +1,4 @@
-FROM node:10.15.0
+FROM node:10.15.0-jessie
 
 # create app directory
 RUN mkdir -p /usr/src/web
@@ -13,6 +13,7 @@ RUN yarn
 COPY . /usr/src/web
 
 EXPOSE 8086
-EXPOSE 35729
 
-CMD ["yarn","start:full"]
+# RUN yarn build:bsb
+
+RUN yarn start:full
