@@ -1,0 +1,26 @@
+{
+  "name": "cra-regen",
+  "alias": "cra-regen.now.sh",
+  "version": 2,
+  "builds": [{ "src": "dist/**", "use": "@now/static" }],
+  "routes": [
+    {
+      "src": "/(.*)\\.(.*)",
+      "dest": "/dist/$1.$2"
+    },
+    {
+      "src": "/",
+      "dest": "/dist/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "status": 301,
+      "headers": { "Location": "/" }
+    }
+  ],
+  "regions": ["all"],
+  "github": {
+    "enabled": false,
+    "autoAlias": false
+  }
+}
