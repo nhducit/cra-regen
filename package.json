@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "yarn watch:css & react-scripts start",
-    "start:full": "yarn watch:css & yar watch:bsb & react-scripts start",
+    "start:full": "yarn watch:css & yarn watch:bsb & react-scripts start",
     "build": "yarn build:css && yarn build:bsb && react-scripts build",
     "deploy": "yarn build && mv build dist && now",
     "test": "react-scripts test",
