@@ -46,7 +46,7 @@
     "now-serve": "0.5.1",
     "postcss-cli": "6.1.1",
     "prettier": "1.16.1",
-    "serve": "10.1.1",
+    "serve": "10.1.2",
     "source-map-explorer": "1.6.0",
     "tailwindcss": "0.7.4",
     "typescript": "3.2.4"
